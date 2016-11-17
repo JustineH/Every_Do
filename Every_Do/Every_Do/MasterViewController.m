@@ -16,7 +16,7 @@
 @property (nonatomic) NSMutableArray *toDoItems;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
-- (void)saveNewItem;
+- (void)saveNewItem:(ToDo *)toDo;
 
 
 @end
@@ -39,7 +39,7 @@
         [self.toDoItems addObject:toDo];
         
         ToDo *toDo1 = [ToDo new];
-        toDo1.item = @"Pick up drycleaning";
+        toDo1.item = @"Pick up dry cleaning";
         toDo1.toDoDescription = @"Ready on Thursday";
         toDo1.priorityNumber = 2;
         toDo1.isCompleted = NO;
