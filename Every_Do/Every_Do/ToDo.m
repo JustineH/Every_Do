@@ -8,15 +8,21 @@
 
 #import "ToDo.h"
 
-@interface ToDo ()
-
-@property (nonatomic) NSString *listItem;
-@property (nonatomic) NSString *toDoDescription;
-@property (nonatomic) int priorityNumber;
-@property (nonatomic) BOOL isCompleted;
-
-@end
 
 @implementation ToDo
+
+
+- (instancetype)initToDoWithItem:(NSString *)item toDoDescription:(NSString *)toDoDescription priorityNumber:(int)priorityNumber isCompleted:(BOOL)isCompleted
+{
+    self = [super init];
+    if (self)
+    {
+        self.item = item;
+        self.toDoDescription = toDoDescription;
+        self.priorityNumber = priorityNumber;
+        self.isCompleted = NO;
+    }
+    return self;
+}
 
 @end

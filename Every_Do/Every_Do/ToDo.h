@@ -10,4 +10,12 @@
 
 @interface ToDo : NSObject
 
+@property (nonatomic) NSString *item;
+@property (nonatomic) NSString *toDoDescription;
+@property (nonatomic) int priorityNumber;
+@property (nonatomic) BOOL isCompleted;
+
+- (instancetype)toDoWithItem:(NSString *)item toDoDescription:(NSString *)toDoDescription priorityNumber:(int)priorityNumber isCompleted:(BOOL)isCompleted;
+
+
 @end

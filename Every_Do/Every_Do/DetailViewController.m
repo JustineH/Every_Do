@@ -20,23 +20,25 @@
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
-        // Update the view.
         [self configureView];
     }
 }
 
 
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+- (void)configureView
+{
+    if (self.detailItem)
+    {
+        self.detailToDoLabel.text = self.detailItem.item;
+        self.detailDescriptionLabel.text = [self.detailItem toDoDescription];
+        self.detailsPriorityLabel.selectedSegmentIndex = [self.detailItem priorityNumber];
+        [self.detailsCompleteSwitch setOn: [self.detailItem isCompleted]];
     }
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 
